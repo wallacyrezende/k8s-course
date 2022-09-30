@@ -1,1 +1,32 @@
 
+kubectl create -f pods/mysql.yaml --save-config --record
+
+kubectl create -f deployments/webapp.yaml --save-config --record
+
+kubectl describe pod mysql-pod
+
+#Acessando um Pod especifico/container
+kubectl exec -it <pod-name> -- bash
+
+apt update
+apt search mysql-client
+apt install default-mysql-client -y 
+
+#Conectando no banco de dados de outro Pod
+mysql -h <172.17.0.3> -uroot -ppassword geek
+
+create table people (id int primary key auto_increment, name varchar(255), email varchar(255));
+show tables;
+insert into people (name, email) values ("Jose gomes", "jose@gmail.com");
+insert into people (name, email) values ("Maria", "maria@gmail.com");
+select * from people;
+
+ctrl+d
+
+ctrl+d
+
+#Acessando um Pod especifico/container
+kubectl exec -it <pod-name> -- bash
+
+cd /etc
+cat resolv.conf
