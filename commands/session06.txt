@@ -1,0 +1,13 @@
+kubectl create -f deployments/frontend-dp.yaml --save-config --record
+
+kubectl create -f services/frontend-svc.yaml --save-config --record
+
+kubectl get all
+
+ifconfig
+
+apt install net-tools
+
+minikube ip
+
+minikube service frontend-svc --url
