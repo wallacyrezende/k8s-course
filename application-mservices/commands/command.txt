@@ -1,0 +1,9 @@
+kubectl create -f namespaces/vote.yaml --save-config --record
+
+kubectl create -f deployments/ --save-config --record
+
+kubectl create -f services/ --save-config --record
+
+minikube service result --url -n vote
+
+minikube service vote --url -n vote
