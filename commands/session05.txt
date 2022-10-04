@@ -30,3 +30,9 @@ kubectl exec -it <pod-name> -- bash
 
 cd /etc
 cat resolv.conf
+
+kubectl get all -n kube-system
+
+- Acessar um pod e executar: nslookup kubernetes
+
+apt install dnsutils -y
