@@ -7,6 +7,7 @@ spec:
     type: frontend
   ports:
     - name: http
+      targetPort: 80
       port: 80
       nodePort: 30080
   type: NodePort
